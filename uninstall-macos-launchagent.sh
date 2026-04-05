@@ -1,11 +1,1 @@
-#!/bin/zsh
-
-set -euo pipefail
-
-AGENT_ID="local.openwebui.launcher"
-PLIST_PATH="${HOME}/Library/LaunchAgents/${AGENT_ID}.plist"
-
-launchctl bootout "gui/$(id -u)/${AGENT_ID}" >/dev/null 2>&1 || true
-rm -f "${PLIST_PATH}"
-
-echo "removed ${AGENT_ID}"
+@uninstall-macos-launchagent.sh
